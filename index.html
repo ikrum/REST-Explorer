@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="assets/jquery.min.js"></script>
+  <link rel="stylesheet" href="assets/bootstrap.min.css">
+  <script src="assets/bootstrap.min.js"></script>
+  <script type="text/javascript" src="router.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+  
+  <link href="assets/bootstrap-dialog/css/bootstrap-dialog.min.css" rel="stylesheet" type="text/css" />
+<script src="assets/bootstrap-dialog/js/bootstrap-dialog.min.js"></script>
+
+<link rel="stylesheet" href="assets/json-viewer/jjsonviewer.css">
+	<script type="text/javascript" src="assets/json-viewer/jjsonviewer.js"></script>
+	<script type="text/javascript" src="assets/notify-combined.min.js"></script>
+  
+  <style>
+	  body {
+		overflow-y: scroll;
+	}
+	.text{
+		background:#e0e0e0;
+		overflow-x:scroll;
+		height:170px;
+		padding:5px;
+
+	}
+	#preview .request-preview-param-body,b{
+		font-weight:bold;
+		color:green;
+	}
+	#preview p{
+		padding:2px;
+		margin-bottom: 0px;
+	}
+	.form-control{
+		border-radius: 4px !important;
+	}
+	
+  </style>
+</head>
+<body>
+   <div id="storage" style="display:none">
+			<table class="table" id="storage-practice-table">
+			<thead>
+			  <tr>
+				<th>Contact ID</th>
+				<th>Name</th>
+				<th>Number</th>
+				<th>Email</th>
+				<th>Is Favourite</th>
+			  </tr>
+			</thead>
+			<tbody id="table-body">
+			  <tr id="contact-row" class="row5">
+				<th scope="row" class="contact-id">5</th>
+				<td class="contact-name">Afjal Hossain</td>
+				<td class="contact-number">018160606060</td>
+				<td class="contact-email">afja@gmail.com</td>
+				<td class="contact-is-favourite">false</td>
+			  </tr>
+			  <tr id="contact-row" class="row18">
+				<th scope="row" class="contact-id">18</th>
+				<td class="contact-name">Baba</td>
+				<td class="contact-number">015898989898</td>
+				<td class="contact-email"></td>
+				<td class="contact-is-favourite">true</td>
+			  </tr>
+			 <tr id="contact-row" class="row6">
+				<th scope="row" class="contact-id">6</th>
+				<td class="contact-name">Forkan Mostofa</td>
+				<td class="contact-number">017505050500</td>
+				<td class="contact-email">forkan.mostofa@gmail.com</td>
+				<td class="contact-is-favourite">true</td>
+			  </tr>
+			 <tr id="contact-row" class="row9">
+				<th scope="row" class="contact-id">9</th>
+				<td class="contact-name">Mama</td>
+				<td class="contact-number">019191919191</td>
+				<td class="contact-email"></td>
+				<td class="contact-is-favourite">true</td>
+			  </tr>
+			 <tr id="contact-row" class="row10">
+				<th scope="row" class="contact-id" >10</th>
+				<td class="contact-name">Rashed Vai</td>
+				<td class="contact-number">016060606060</td>
+				<td class="contact-email">rashed@gmail.com</td>
+				<td class="contact-is-favourite">false</td>
+			  </tr>
+			 
+			 <tr id="contact-row" class="row72">
+				<th scope="row" class="contact-id" >72</th>
+				<td class="contact-name">Shohel Rana</td>
+				<td class="contact-number">015454545454</td>
+				<td class="contact-email"></td>
+				<td class="contact-is-favourite">false</td>
+			  </tr>
+			 
+			</tbody>
+		  </table>
+   </div>
+<div class="container">
+	<h1>WELCOME TO DUMMY PRACTICE</h1> 
+
+
+
+
+
+
+
+<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+	<ul id="myTab" class="nav nav-tabs" role="tablist">
+		<li role="presentation" class="active"><a href="#practice-tab" role="tab" data-toggle="tab" aria-expanded="true">Practice</a></li>
+		<li role="presentation"><a href="#example-tab" role="tab" data-toggle="tab" >Example</a></li>
+		<li role="presentation"><a href="#" role="tab">Google</a></li>
+	</ul>
+	
+	<div class="tab-content">
+		<div role="tabpanel" class="tab-pane fade in active" id="practice-tab">
+			<br/>
+	
+
+	<div class="row">
+	  
+	  <div class="col-lg-6" >
+		<div class="input-group" >
+		  <span class="input-group-addon" id="basic-addon1">http://apikothn.com</span>
+		  <input type="text" required class="form-control" id="input-url" placeholder="/api/contacts" aria-describedby="basic-addon1">
+		</div>
+	  </div><!-- /.col-lg-6 -->
+	  <div class="col-lg-2"  >
+		  <div class="dropdown ">
+			<select  class="form-control" id="request-method-dropdown" width="20px" onchange="switchMethod(this.value)">
+				<option>GET</option>
+				<option>POST</option>
+				<option>PUT</option>
+				<option>DELETE</option>
+			</select>
+		  </div>
+		</div>
+		 <div class="col-lg-2" id="top-send-request-div" >
+		  <div class="btn-group" role="group" aria-label="...">
+			  <button type="button" class="btn btn-success" onclick="sendRequest()">Send Request</button>
+			</div>
+		</div>
+		
+		
+	</div><!-- /.row -->
+	
+
+	<br/>
+	
+	<div class="row" id="input-contact-form" style="display:none">
+	  <div class="col-lg-2">
+		<div class="input-group">
+		  <input type="text" class="form-control input-contact-name" placeholder="Contact Name">
+		</div><!-- /input-group -->
+	  </div><!-- /.col-lg-6 -->
+	  <div class="col-lg-2">
+		<div class="input-group">
+		  <input type="text" class="form-control input-contact-number" placeholder="Number">
+		</div><!-- /input-group -->
+	  </div><!-- /.col-lg-6 -->
+	  <div class="col-lg-2">
+		<div class="input-group">
+		  <input type="email" class="form-control input-contact-email" placeholder="Email">
+		</div><!-- /input-group -->
+	  </div><!-- /.col-lg-6 -->
+	  <div class="col-lg-2"  >
+		  <div class="dropdown ">
+			<select  class="form-control input-contact-favourite">
+				<option value="">Is Favourite?</option>
+				<option value="true">true</option>
+				<option value="false">false</option>
+			</select>
+		  </div>
+		</div>
+	   <div class="col-lg-2"  >
+		  <div class="btn-group" role="group" aria-label="...">
+			  <button type="button" class="btn btn-success" onclick="sendRequest()">Send Request</button>
+			</div>
+		</div>
+	  
+	  
+	</div><!-- /.row -->
+	
+	<br/><br/>
+	<div class="row" id="preview">
+		<div class="col-lg-6" id="request-preview">
+			<h4>Request</h4>
+			<div class="text">
+				<p class="request-preview-param-uri">GET <b>/api/contacts</b> HTTP/1.1</p>
+				<p>Host:apikothn.com</p>
+				<p>Cache-Control: no-cache</p>
+				<p>Content-Type: application/x-www-form-urlencoded</p>
+				<p class="request-preview-param-body"></p>
+			</div>
+		</div>
+		
+		<div class="col-lg-6" id="response-preview">
+			<h4>Response</h4>
+			<div class="text">
+				
+			</div>
+		</div>
+	</div>
+	
+	<br/><br/>
+	
+	
+	<div class="row">
+		<div class="panel panel-default">
+		  <!-- Default panel contents -->
+		  <div class="panel-heading">Contact Preview</div>
+
+		  <!-- Table -->
+		  <table class="table" id="practice-table">
+			<thead>
+			  <tr>
+				<th>Contact ID</th>
+				<th>Name</th>
+				<th>Number</th>
+				<th>Email</th>
+				<th>Is Favourite</th>
+			  </tr>
+			</thead>
+			<tbody id="table-body">
+			  
+			  
+			 
+			</tbody>
+		  </table>
+		</div>
+	</div>
+					</div>
+				<div role="tabpanel" class="tab-pane fade" id="example-tab">
+					<div class="row">
+					example tab content here <br/>
+					example tab content here <br/>
+					example tab content here <br/>
+					
+					</div>
+				</div>
+			</div>
+		</div>
+</div>
+<script type="text/javascript">
+	getAllContacts();
+	
+</script>
+</body>
+</html>
