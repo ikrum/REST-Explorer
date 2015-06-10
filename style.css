@@ -1,0 +1,21 @@
+body {
+	overflow-y: scroll;
+}
+.text{
+	background:#e0e0e0;
+	overflow-x:scroll;
+	height:170px;
+	padding:5px;
+
+}
+#preview .request-preview-param-body,b{
+	font-weight:bold;
+	color:green;
+}
+#preview p{
+	padding:2px;
+	margin-bottom: 0px;
+}
+.form-control{
+	border-radius: 4px !important;
+}
