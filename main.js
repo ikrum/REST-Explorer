@@ -40,6 +40,9 @@ function addContact(){
 	var payload = getRequestPayload();
 	var missingFields = '';
 	
+	if(!favourite)
+		favourite = 'false';
+	
 	if(!name)
 		missingFields = "name";
 	if(!number){
@@ -118,6 +121,9 @@ function updateContact(){
 	var email = $(".input-contact-email").val();
 	var favourite = $(".input-contact-favourite").val();
 	
+	if(!favourite)
+		favourite = 'false';
+	
 	if(contact){
 		
 		if(name)
@@ -126,8 +132,8 @@ function updateContact(){
 			$(selector).find('td.contact-number').html(number);
 		if(email)
 			$(selector).find('td.contact-email').html(email);
-		if(favourite)	
-			$(selector).find('td.contact-is-favourite').html(favourite);
+			
+		$(selector).find('td.contact-is-favourite').html(favourite);
 		if(payload){
 			$("#response-preview .text").jJsonViewer('{"status":200,"message":"Contact updated!"}');
 			$.notify("Contact updated!", "success");
