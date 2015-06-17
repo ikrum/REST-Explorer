@@ -203,11 +203,68 @@
 				</div>
 				<div role="tabpanel" class="tab-pane fade" id="example-tab">
 					<div class="row">
-					example tab content here <br/>
-					example tab content here <br/>
-					example tab content here <br/>
-
+						<br/><h1>Resources and Actions</h1><br/>
 					</div>
+					<div class="row">
+						<div class="panel panel-default">
+							<table class="table" id="practice-table">
+								<thead>
+									<tr>
+										<th>Resource</th>
+										<th>HTTP Method</th>
+										<th>Operation</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row">/api/contacts</th>
+										<td>GET</td>
+										<td>Returns an array of contacts</td>
+									</tr>
+									<tr>
+										<th scope="row">/api/contacts</th>
+										<td>POST</td>
+										<td>Adds a new contact</td>
+									</tr>
+									<tr>
+										<th scope="row">/api/contacts,type=star</th>
+										<td>GET</td>
+										<td>Returns an array of favourite contacts</td>
+									</tr>
+									<tr>
+										<th scope="row">/api/contacts/:id</th>
+										<td>GET</td>
+										<td>Returns the contact with id of :id</td>
+									</tr>
+									<tr>
+										<th scope="row">/api/contacts/:id</th>
+										<td>PUT</td>
+										<td>Update the contact with id of :id</td>
+									</tr>
+									<tr>
+										<th scope="row">/api/contacts/:id</th>
+										<td>DELETE</td>
+										<td>Deletes the contact with id of :id</td>
+									</tr>
+									<tr>
+										<th scope="row">/api/contacts/:id/star</th>
+										<td>PUT</td>
+										<td>Adds to favourites  the contact with id of :id</td>
+									</tr>
+									<tr>
+										<th scope="row">/api/contacts/:id/star</th>
+										<td>DELETE</td>
+										<td>Removes from favourites  the contact with id of :id</td>
+									</tr>
+								</tbody>
+							</table>
+
+						</div>
+					</div>
+					<div class="row">
+						<br/><h1>Examples</h1>
+					</div>
+					
 				</div>
 			</div>
 		</div>
