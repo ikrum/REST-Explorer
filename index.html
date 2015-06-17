@@ -18,6 +18,9 @@
 	<script type="text/javascript" src="router.js"></script>
 	<script type="text/javascript" src="main.js"></script>
 	<link href="style.css" rel="stylesheet" type="text/css" />
+	
+	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Play' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -84,7 +87,7 @@
 	
 	<div class="container">
 		<h1>Practice REST operations</h1> 
-
+		<br/>
 		<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
 			<ul id="myTab" class="nav nav-tabs" role="tablist">
 				<li role="presentation" class="active"><a href="#practice-tab" role="tab" data-toggle="tab" aria-expanded="true">Practice</a></li>
@@ -201,7 +204,7 @@
 						</div>
 					</div>
 				</div>
-				<div role="tabpanel" class="tab-pane fade" id="example-tab">
+				<div role="tabpanel" class="tab-pane fade" id="example-tab" style="padding:10px;">
 					<div class="row">
 						<br/><h1>Resources and Actions</h1><br/>
 					</div>
@@ -217,42 +220,42 @@
 								</thead>
 								<tbody>
 									<tr>
-										<th scope="row">/api/contacts</th>
+										<td scope="row">/api/contacts</th>
 										<td>GET</td>
 										<td>Returns an array of contacts</td>
 									</tr>
 									<tr>
-										<th scope="row">/api/contacts</th>
+										<td scope="row">/api/contacts</th>
 										<td>POST</td>
 										<td>Adds a new contact</td>
 									</tr>
 									<tr>
-										<th scope="row">/api/contacts,type=star</th>
+										<td scope="row">/api/contacts,type=star</th>
 										<td>GET</td>
 										<td>Returns an array of favourite contacts</td>
 									</tr>
 									<tr>
-										<th scope="row">/api/contacts/:id</th>
+										<td scope="row">/api/contacts/:id</th>
 										<td>GET</td>
 										<td>Returns the contact with id of :id</td>
 									</tr>
 									<tr>
-										<th scope="row">/api/contacts/:id</th>
+										<td scope="row">/api/contacts/:id</th>
 										<td>PUT</td>
 										<td>Update the contact with id of :id</td>
 									</tr>
 									<tr>
-										<th scope="row">/api/contacts/:id</th>
+										<td scope="row">/api/contacts/:id</th>
 										<td>DELETE</td>
 										<td>Deletes the contact with id of :id</td>
 									</tr>
 									<tr>
-										<th scope="row">/api/contacts/:id/star</th>
+										<td scope="row">/api/contacts/:id/star</th>
 										<td>PUT</td>
 										<td>Adds to favourites  the contact with id of :id</td>
 									</tr>
 									<tr>
-										<th scope="row">/api/contacts/:id/star</th>
+										<td scope="row">/api/contacts/:id/star</th>
 										<td>DELETE</td>
 										<td>Removes from favourites  the contact with id of :id</td>
 									</tr>
@@ -262,7 +265,20 @@
 						</div>
 					</div>
 					<div class="row">
-						<br/><h1>Examples</h1>
+						<br/><h1>Examples</h1><hr/>
+						<h4>Add new contact</h4>
+						<p>To add new contact type <b>/api/contacts</b> at the input box. Select <b>POST</b> Method from dropdown. Fill the contact information as well as select <b>true</b> if you want to add the contact into your favourite list. Send Request and inspect the Request and Response returned. See the updates on preview.</p>
+						<img src="images/add_new_contact.PNG" />
+						
+						<br/><br/>
+						
+						<h4>Delete contact</h4>
+						<p>To delete a contact type the resource URI with ID. If you want to delete a contact of ID:10 then URI will be <b>/api/contacts/10</b>. Select <b>DELETE</b> Method from dropdown. Send Request and inspect the Request and Response returned. See the updates on preview.</p>
+						<img src="images/delete_contact.PNG" />
+					</div>
+					
+					<div class="row">
+						<br/><br/>
 					</div>
 					
 				</div>
