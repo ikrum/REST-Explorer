@@ -185,8 +185,10 @@ function notFound(){
 	$(".request-preview-param-uri").html(uri_param);
 	$(".request-preview-param-body").html(getRequestPayload());
 	
-	$("#response-preview .text").jJsonViewer('{"status":404,"message":"Requested URI ['+rootURL+input_url+'] not found!"}');
+	$("#response-preview .text").jJsonViewer('{"status":404,"message":"Requested URI  not found!"}');
 	$.notify("ERROR! See the response!", "error");
+	
+	$("#practice-table #table-body").html('<h4 style="color:red;">&nbsp;Nothing to preview </h4>');
 }
 function invalidRequestMethod(){
 	var input_url = $("#input-url").val();
@@ -196,7 +198,7 @@ function invalidRequestMethod(){
 	$(".request-preview-param-uri").html(uri_param);
 	$(".request-preview-param-body").html(getRequestPayload());
 	
-	$("#response-preview .text").jJsonViewer('{"status":404,"message":"Requested method ['+method+'] is not applicable for '+rootURL+input_url+'. See the examples !"}');
+	$("#response-preview .text").jJsonViewer('{"status":404,"message":"Requested method ['+method+'] is not applicable. See the examples !"}');
 	$.notify("ERROR! See the response!", "error");
 }
 
