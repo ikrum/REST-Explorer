@@ -199,6 +199,7 @@ function invalidRequestMethod(){
 	$(".request-preview-param-body").html(getRequestPayload());
 	
 	$("#response-preview .text").jJsonViewer('{"status":404,"message":"Requested method ['+method+'] is not applicable. See the examples !"}');
+	$("#practice-table #table-body").html('<h4 style="color:red;">&nbsp;Nothing to preview </h4>');
 	$.notify("ERROR! See the response!", "error");
 }
 
