@@ -1,7 +1,10 @@
 # Practice REST operations
 *Author: Ikrum Hossain (ikrum.bd@gmail.com)*
 
-This is an offline practice application where newbies can learn REST operations. For demonstration a dummy contact app has been implemented. You can also download the real REST api and Android app from here.
+This is an offline practice application where newbies can learn REST operations. For demonstration a dummy contact app has been implemented. You can also download the real REST api and Android app from [REST-in-SlimFramework](https://github.com/ikrum/REST-in-SlimFramework)
+
+
+###### REST-Explorer Demo : http://apikothon.com/demo/REST-Explorer/
 
 ### What you can learn from here
 * Resource / URL format
@@ -20,6 +23,7 @@ This is an offline practice application where newbies can learn REST operations.
 
 ## Screenshot
 ![ScreenShot](https://raw.githubusercontent.com/ikrum/Practice-REST/master/screenshot.PNG)
+
 
 
 ## Contribution
